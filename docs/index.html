@@ -1,0 +1,421 @@
+<meta http-equiv="Cache-Control" content="max-age=86400" />
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        td,
+        th {
+            border: 0px solid black;
+        }
+
+        img {
+            padding: 5px;
+        }
+    </style>
+
+    <title>TF-SA</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./static/images/logo.png" />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/leaderboard.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/explorer-index.js"></script>
+    <script src="./static/js/question_card.js"></script>
+
+    <script src="./static/js/leaderboard_testmini.js"></script>
+    <script src="./data/results/output_folders.js" defer></script>
+    <script src="./data/results/model_scores.js" defer></script>
+
+    <script src="./visualizer/data/data_public.js" defer></script>
+
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h2 class="title is-2 publication-title is-bold" style="margin-bottom: 0;">
+                            Training Free Stylized Abstraction
+                        </h2>
+                        <div class="is-size-5 publication-authors">
+                            <div class="authors-group">
+                                <span class="author-block">
+                                    <a href="https://aimansnigdha.github.io" target="_blank">Aimon Rahman*
+                                    </a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://kartik-3004.github.io/portfolio/" target="_blank">Kartik
+                                        Narayan*</a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en"
+                                        target="_blank">Vishal M. Patel</a>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Johns Hopkins University</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <a href="as"></a>
+                            </span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://github.com/Kartik-3004/TF-SA"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://github.com/Kartik-3004/TF-SA"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>code</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="margin-bottom: 2vh;">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">What is Stylized Abstraction ?</h2>
+                    <div class="content has-text-justified">
+                        <img src="./static/images/intro_figs.png" alt="" border=0 height=500 width=1500></img>
+                        <p>
+                            Figure 1. <b>a)</b> Style Abstraction vs. Traditional style transfer. <b>(Top)</b> Stylized
+                            abstraction techniques capture
+                            core identifying attributes while allowing stylistic distortion to preserve the intended
+                            visual style. <b>(Bottom)</b>
+                            Traditional style transfer preserves geometry and appearance but applies texture-based
+                            styles, often failing to
+                            generalize beyond appearance-level edits.
+                            <b>b)</b> Comparison across existing style transfer/personalized generation using a
+                            <b>single image</b> of a
+                            <b>non-celebrity subject</b>. Most methods struggle to retain semantic identity for everyday
+                            individuals, while our
+                            <b>training-free</b> method preserves key identity cues across diverse styles.
+                        </p>
+                        <p><b>Stylized abstraction</b> involves exaggerating or simplifying the features of a subject to
+                            create a stylized representation. Rather than aiming for photorealism, it emphasizes
+                            recognizable traits that evoke the
+                            subject's <b>concept or identity</b> (Illustrated in Figure Figure 1.(a)). Stylized
+                            representation aims to
+                            capture the essence of a subject through <i>visual abstraction</i>, focusing less on exact
+                            likeness and more on the
+                            retention of key, recognizable features. For instance, a knitted doll or a LEGO figure of
+                            Einstein may omit intricate facial geometry or biometric precision, yet still be immediately
+                            identifiable due to
+                            consistent visual traits such as his distinctive hair, mustache, or attire. These features
+                            serve as semantic anchors,
+                            allowing viewers to recognize the subject even in highly abstracted or playful forms. This
+                            form of representation is
+                            widespread in media, animation, and merchandising, where retaining a character's identity in
+                            a simplified, reproducible
+                            form is essential. Terms like <i>personified toy representation</i> or <i>iconic
+                                stylization</i> are often used to
+                            describe such instances. Unlike traditional image-to-image translation, which typically
+                            enforces structural consistency,
+                            stylized abstraction embraces simplification, distortion, or even exaggeration to evoke
+                            familiarity and conceptual
+                            identity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-bottom: 2vh;">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Contributions</h2>
+                        <div class="content has-text-justified">
+                            <p>The key contributions of our work are as follows:
+                            </p>
+                            <ul>
+                                <li>
+                                    <b>Training-Free Stylized Abstraction Framework</b>: We introduce a fully
+                                    training-free pipeline that generates stylized abstractions from a single input
+                                    image by leveraging
+                                    inference-time scaling in vision-language models (VLLMs) to extract and preserve
+                                    identity-relevant features.
+                                </li>
+                                <li> <b>Cross-Domain Rectified Flow Inversion</b>: We propose a novel cross-domain
+                                    latent reversal strategy using rectified flows, which reconstructs subject structure
+                                    in
+                                    the abstracted style domain based on style-dependent priors, rather than relying on
+                                    photo-realistic inversions.
+                                </li>
+                                <li> <b>Style-Aware Temporal Scheduling</b>: We introduce a style-aware temporal
+                                    scheduling that dynamically modulates structural
+                                    restoration through a VLLM-driven, style-aware temporal controller, enabling
+                                    high-fidelity reconstructions that balance semantic identity preservation with
+                                    stylistic exaggeration.
+                                </li>
+                                <li> <b>Multi-Round Abstraction-Aware Generation Loop</b>: We employ an iterative
+                                    VLLM-in-the-loop process where missing or misaligned identity cues are identified
+                                    and reintegrated
+                                    across multiple rounds, achieving convergence without any model fine-tuning.
+                                </li>
+                                <li> <b>StyleBench: Human-Aligned Evaluation Protocol</b>: We propose StyleBench, a
+                                    GPT-based, human-aligned benchmarking metric explicitly designed for abstraction
+                                    styles where
+                                    traditional pixel-level metrics fail assessing fidelity along axes of style
+                                    adherence, identity preservation, and fusion
+                                    quality.
+                                </li>
+                            </ul>
+                            <p>
+                                With our proposed work, we are able to achieve strong generalization across unseen
+                                identities and styles. We
+                                demonstrate through extensive experiments (quantitative metrics like KID and CLIPScore,
+                                plus human studies) that the
+                                framework generalizes robustly to a wide variety of abstract styles (e.g., LEGO, knitted
+                                dolls, South Park) and
+                                out-of-distribution, everyday subjects, all in a fully open-source setup.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Abstract. -->
+
+                <!-- Paper video. -->
+
+                <section class="section">
+                    <div class="container" style="margin-bottom: 2vh;">
+                        <!-- Abstract. -->
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-four-fifths">
+                                <h2 class="title is-3">Method</h2>
+                                <div class="content has-text-justified">
+                                    <h5 class="subtitle has-text-centered"></h5>
+
+                                    <img src="./static/images/main_figure.png" alt="" border=0 sheight=500
+                                        width=1500></img>
+                                    <p>
+                                        Our work conists of three main parts: (1) Identity distillation via
+                                        infernece time VLLM scaling, (2) Cross-domain latent reversal with rectified
+                                        flow, and (3) Human-Aligned Style Bench Framework.
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="container" style="margin-bottom: 2vh;">
+                        <section class="section">
+                            <div class="container">
+                                <div class="columns is-centered">
+                                    <div class="column is-full has-text-centered content">
+                                        <h2 class="title is-3" id="example">Qualitative Results</h2>
+                                        <div id="results-carousel" class="carousel results-carousel">
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_1.png" alt="Example 1"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_2.png" alt="Example 2"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_3.png" alt="Example 3"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_4.png" alt="Example 4"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_5.png" alt="Example 5"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_6.png" alt="Example 6"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_7.png" alt="Example 7"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_8.png" alt="Example 8"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_9.png" alt="Example 9"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_10.png" alt="Example 10"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_11.png" alt="Example 11"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_12.png" alt="Example 12"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_13.png" alt="Example 13"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                            <div class="box m-5">
+                                                <div class="content has-text-centered">
+                                                    <img src="static/images/example_14.png" alt="Example 14"
+                                                        style="width:84%; height:700px; object-fit: contain;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <div class="container" style="margin-bottom: 2vh;">
+                                <div class="columns is-centered has-text-centered">
+                                    <div class="column is-four-fifths">
+                                        <h2 class="title is-3">Quantitative Results</h2>
+                                        <div class="content has-text-justified">
+                                            <h5 class="subtitle has-text-centered"></h5>
+                                            <img src="./static/images/results.png" alt="" border="0" height=500
+                                                width=1500></img>
+                                            <p>
+                                                Comparison of stylization methods across KID, CLIP, StyleBench, and
+                                                human evaluation scores. Methods are grouped into
+                                                fine-tuned, encoder-based, and training-free categories.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+            </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container" style="margin-top: -200px; margin-bottom: -100px;"></div>
+        <div class="container is-max-desktop">
+            <h2 class="title">BibTeX</h2>
+            <pre>Coming Soon ... !!!
+            </pre>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h5 class="title" style="font-size: 10px;"> Acknowledgement: The website template is taken from
+                <span class="author-block">
+                    <a href="https://nerfies.github.io/" target="_blank">Nerfies</a>
+            </h5>
+        </div>
+    </section>
+
+    <script>
+        const viewers = document.querySelectorAll(".image-compare");
+        viewers.forEach((element) => {
+            let view = new ImageCompare(element, {
+                hoverStart: true,
+                addCircle: true
+            }).mount();
+        });
+
+        $(document).ready(function () {
+            var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+                lineNumbers: false,
+                lineWrapping: true,
+                readOnly: true
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        });
+
+        // Carousel Initialization
+        document.addEventListener("DOMContentLoaded", () => {
+            bulmaCarousel.attach('#example-carousel', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                autoplay: true,
+                loop: true,
+                pauseOnHover: true,
+                navigation: true,
+                pagination: true,
+            });
+        });
+    </script>
+
+</body>
+
+</html>
